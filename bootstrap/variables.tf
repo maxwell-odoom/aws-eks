@@ -13,5 +13,5 @@ variable "project" {
 variable "noncurrent_version_retention_days" {
   type        = number
   description = "How long old state versions are kept before deletion"
-  default     = 90
+  default     = 30
 }
