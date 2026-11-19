@@ -6,6 +6,7 @@ terraform {
   backend "s3" {
     bucket = "platform-eks-tfstate-123456789012-eu-west-1"
     key          = "eks/sandbox/terraform.tfstate"
+    profile = "log-account"
     encrypt      = true
     use_lockfile = true
   }
