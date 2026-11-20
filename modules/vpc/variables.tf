@@ -13,19 +13,8 @@ variable "cidr" {
   default = "10.0.0.0/16"
 }
 
-variable "az_count" {
-  type        = number
-  description = "Number of availability zones (EKS needs at least 2)"
-  default     = 2
-
-  validation {
-    condition     = var.az_count >= 2
-    error_message = "EKS requires subnets in at least 2 availability zones."
-  }
-}
-
-variable "single_nat_gateway" {
-  type        = bool
-  description = "One shared NAT gateway (cheap) instead of one per AZ (highly available)"
-  default     = true
+variable "availability_zone" {
+  type        = string
+  description = "AZ for both subnets. Defaults to the first available AZ in the region."
+  default     = null
 }
